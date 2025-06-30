@@ -47,7 +47,11 @@ Las siguientes características están en desarrollo y se incorporarán en próx
 
 1. Clona el repositorio:
    ```bash
-   git clone https://github.com/tu-usuario/moviup.git
+   1. git clone git@github.com:ShewinVega/TMDBMovie-ReactNative.git
+
+   2. npm install
+
+   3. npx expo start
 
 
 📌 Estado del proyecto
