@@ -48,3 +48,7 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+tmbb access token: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YWRiOThiZTVmMDBkZGUxZWQwMjU4Y2ZmMGVmYWQzZCIsIm5iZiI6MTc1MDk4ODU4MS42NzgwMDAyLCJzdWIiOiI2ODVkZjcyNTk5ODdmYWEyOGU4MDU3MDQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.N0BgrTR0ioqhhUaZjUcr9Myyq6EAX5R7hOfhSgi_wTw
+
+tmdb api key: 9adb98be5f00dde1ed0258cff0efad3d
