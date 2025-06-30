@@ -1,54 +1,60 @@
-# Welcome to your Expo app 👋
+# 🎬 MovieApp
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**MovieApp** es una aplicación móvil desarrollada con React Native que permite a los usuarios explorar películas utilizando la API de TMDB. Además de brindar detalles completos de cada película, MovieApp personaliza la experiencia destacando las películas más buscadas por el usuario, almacenadas dinámicamente en una base de datos ligera a través de Appwrite.
 
-## Get started
+---
 
-1. Install dependencies
+## 📱 Características principales
 
+- 🔍 Búsqueda de películas por nombre.
+- 📄 Visualización de detalles completos:
+  - Título
+  - Descripción
+  - Puntuación y rating
+  - Género
+  - Compañías productoras
+  - Presupuesto de producción
+- 🎞️ Carrusel horizontal con las películas más buscadas por el usuario.
+- 📊 Registro automático de tendencias personales en función de las búsquedas realizadas.
+- 🌐 Consumo de datos desde la API de TMDB.
+- ☁️ Persistencia de datos en Appwrite.
+
+---
+
+## 🚧 Próximamente
+
+Actualmente, **la funcionalidad de búsqueda, visualización de detalles y generación de tendencias personalizadas** está **completamente implementada y funcional**.
+
+Las siguientes características están en desarrollo y se incorporarán en próximas versiones:
+
+- 🗂️ Sección de **películas guardadas** por el usuario.
+- 👤 Gestión y edición de **perfil de usuario**.
+
+---
+
+## 🧪 Tecnologías utilizadas
+
+- [React Native](https://reactnative.dev/)
+- [Appwrite](https://appwrite.io/)
+- [TMDB API](https://www.themoviedb.org/documentation/api)
+- React Navigation
+- Axios
+- FlatList / ScrollView para listas horizontales
+
+---
+
+## 🚀 Cómo ejecutar el proyecto
+
+1. Clona el repositorio:
    ```bash
-   npm install
-   ```
+   git clone https://github.com/tu-usuario/moviup.git
 
-2. Start the app
 
-   ```bash
-   npx expo start
-   ```
+📌 Estado del proyecto
+✅ Proyecto en estado funcional como práctica personal.
+🔄 Abierto a mejoras o refactorizaciones futuras.
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
-
-tmbb access token: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5YWRiOThiZTVmMDBkZGUxZWQwMjU4Y2ZmMGVmYWQzZCIsIm5iZiI6MTc1MDk4ODU4MS42NzgwMDAyLCJzdWIiOiI2ODVkZjcyNTk5ODdmYWEyOGU4MDU3MDQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.N0BgrTR0ioqhhUaZjUcr9Myyq6EAX5R7hOfhSgi_wTw
-
-tmdb api key: 9adb98be5f00dde1ed0258cff0efad3d
+📩 Contacto
+Desarrollado por Edwin Vega
+📧 www.linkedin.com/in/edwin-vega-9b9a07266
+📁 CV disponible bajo solicitud o en el perfil
