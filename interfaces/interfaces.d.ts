@@ -27,8 +27,9 @@ interface SavedMovie {
   movie_id: number;
   title: string;
   poster_url: string;
-  saved: boolean;
-  created_at: number;
+  created_at: date;
+  vote_average: number;
+  release_date: string;
 }
 
 interface MovieDetails {
