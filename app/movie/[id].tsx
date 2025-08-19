@@ -1,8 +1,7 @@
 import { icons } from "@/constants/icons";
-import useFetch from "@/hooks/useFetch";
-import { getMovieDeatils } from "@/services/api";
+import { AppDispatch, findMovie, RootState, saveMovie } from "@/store";
 import { router, useLocalSearchParams } from "expo-router";
-import React, { useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import {
   Image,
   ScrollView,
@@ -12,6 +11,7 @@ import {
   View,
 } from "react-native";
 import { IconButton } from "react-native-paper";
+import { useDispatch, useSelector } from "react-redux";
 
 interface MovieInfoProps {
   label: string;
@@ -31,13 +31,36 @@ const MovieInfo = ({ label, value }: MovieInfoProps) => {
 
 const MovieDetail = () => {
   // variables
-  const [saveMovie, setSaveMovie] = useState(false);
+  const dispatch: AppDispatch = useDispatch();
+  const { movieDetail: movie, savedMovies } = useSelector(
+    (state: RootState) => state.movies,
+  );
 
   // get the movie id form the url
   const { id } = useLocalSearchParams();
+  const isLike = useMemo(() => {
+    return (
+      savedMovies && savedMovies.some((saved) => saved.movie_id === Number(id))
+    );
+  }, [savedMovies]);
 
   // get the movie details
-  const { data: movie } = useFetch(() => getMovieDeatils(id as string));
+  useEffect(() => {
+    dispatch(findMovie(id as string));
+  }, []);
+
+  // save movie
+  const handleSaveMovie = () => {
+    const movieToSave: SavedMovie = {
+      movie_id: movie?.id,
+      title: movie?.title,
+      poster_url: movie?.poster_path,
+      created_at: new Date(),
+      release_date: movie?.release_date,
+      vote_average: movie?.vote_average,
+    };
+    dispatch(saveMovie(movieToSave));
+  };
 
   return (
     <View className="bg-primary flex-1 pb-20">
@@ -60,8 +83,8 @@ const MovieDetail = () => {
               </Text>
               <IconButton
                 icon="heart"
-                iconColor={saveMovie ? "red" : "white"}
-                onPress={() => setSaveMovie(!saveMovie)}
+                iconColor={`${isLike ? "red" : "white"}`}
+                onPress={() => handleSaveMovie()}
               />
             </View>
             <View className="flex-row items-center gap-2">

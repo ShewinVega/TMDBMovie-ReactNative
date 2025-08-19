@@ -75,14 +75,14 @@ export const getTrendingMovies = async (): Promise<
   }
 };
 
-export const saveFavoriteMovie = async (movie: Movie): Promise<void> => {
+export const saveFavoriteMovie = async (movie: SavedMovie): Promise<void> => {
   try {
     // get the document if this one exist
 
     const getFavoriteMovies = await database.listDocuments(
       DATABASE_ID,
       FAVORITES_COLLECTION,
-      [Query.equal("movie_id", movie.id)],
+      [Query.equal("movie_id", movie.movie_id)],
     );
 
     // Checkf if there is a movie already saved as a favorite
@@ -105,10 +105,13 @@ export const saveFavoriteMovie = async (movie: Movie): Promise<void> => {
         FAVORITES_COLLECTION,
         ID.unique(),
         {
-          movie_id: movie.id,
+          movie_id: movie.movie_id,
           title: movie.title,
-          poster_url: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+          poster_url: `https://image.tmdb.org/t/p/w500${movie.poster_url}`,
+          vote_average: movie.vote_average,
+          release_date: movie.release_date,
           saved: true,
+          created_at: movie.created_at,
         },
       );
     }
